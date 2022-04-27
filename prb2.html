@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="index.css">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://kit.fontawesome.com/a2c9f8ecf6.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<style>
+   *{
+  box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 650px;
+  overflow:hidden; /* Should be removed. Only for demonstration */
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.Bills{
+    color:orange; 
+    padding: 15px;  
+}
+.Search{
+    border:1px solid lightgrey;
+    border-radius: 15px;
+    padding: 5px;
+    box-shadow:  rgba(0, 0, 0, 0.3) 0px 3px 7px -3px inset;
+}
+.ulist {
+    list-style-type: none;
+  }
+  .listItem1 {
+    border: 1px solid rgb(242, 242, 242);
+    font-weight: bold;
+  }
+  .listItem2 {
+    border: 1px solid rgb(242, 242, 242);
+    font-weight: bold;
+  }
+  .listItem3 {
+    border: 1px solid rgb(242, 242, 242);
+    font-weight: bold;
+  }
+  #firstlink{
+    text-decoration: none;
+    display:inline-box;
+    padding:8px 16px;
+    float:right;
+    margin-top:10px;
+    border-radius:50%;
+    cursor:pointer;
+    background-color: grey;
+    border:none;
+  }
+  firstlink:hover{
+    background-color: GREY;
+    color:black;
+  }
+  .first{
+    border-radius:50%;
+    background-color: GREY;
+
+  }
+ 
+  #secondlink{
+    text-decoration: none;
+    display:inline-box;
+    padding:8px 16px;
+    float:right;
+    margin-top:10px;
+    border-radius:50%;
+    cursor:pointer;
+    background-color: grey;
+    border:none;
+  }
+  secondlink:hover{
+    background-color: GREY;
+    color:black;
+  }
+  .second{
+    border-radius:50%;
+    background-color: GREY;
+
+  }
+  #thirdlink{
+    text-decoration: none;
+    display:inline-box;
+    padding:8px 16px;
+    float:right;
+    margin-top:10px;
+    border-radius:50%;
+    cursor:pointer;
+    background-color: grey;
+    border:none;
+  }
+  thirdlink:hover{
+    background-color: GREY;
+    color:black;
+  }
+  .third{
+    border-radius:50%;
+    background-color: GREY;
+
+  }
+ 
+  .icon{
+    margin-top:120px;
+    margin-left:250px;
+  }
+
+  #heading{
+      background-color: orange;
+      color: white;
+      padding:8px;
+      
+  }
+  #bell{
+    margin-right: 50px;
+  }
+  
+  .flex-container {
+        display: flex;
+        height: 100px;
+        justify-content: space-between;
+        background-color: white;
+      }
+      
+      .flex-container > div {
+        background-color: white;
+        width: 500px;
+        margin: 2px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 20px;
+      }
+      .add{
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        background-color:rgb(23, 196, 176);
+        border: none;
+        padding: 20px;
+        border-radius: 0px 0px 25px 25px;
+        margin: 0;
+        margin-right: 10px;
+        
+       }
+       .remove{
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        background-color:rgb(220, 15, 83);
+        border: none;
+        padding: 15px 25px 15px 25px;
+        border-radius: 0px 0px 25px 25px;
+        margin: 0px 10px 10px auto;
+        margin-right: 10px;
+        color: white;
+       }
+      .title {
+        display: flex;
+        justify-content: space-between;
+        border-left: 5px solid orange;
+        border-right:10px solid grey;
+        background-color: white;
+        height: 100px;
+        line-height: 30px;
+        padding: 5px 15px;
+        font-size: 18px;
+        color: #212121;
+        margin-bottom: 1px;
+        margin-top:8%;
+      }
+      .plus{
+        background-color: gray;
+        border:none;
+        float: right;
+        padding: 20px;
+        border-radius:0px 0px 30px 30px;
+        margin-top: 5px;
+        
+      }
+      #material{
+        color: grey;
+        margin-top: 2%;
+
+      }
+      .title2 {
+        display: flex;
+        justify-content: space-between;
+        border-left: 5px solid grey;
+        border-right:10px solid grey;
+        background-color: white;
+        height: 60px;
+        line-height: 5PX;
+        padding: 5px 15px;
+        font-size: 18px;
+        color: #212121;
+        margin-bottom: 20px;
+        margin-top:1%;
+      }
+</style>
+<script>
+  function myFunction() {
+    let menu = document.querySelector('#material');
+
+    let material = document.querySelector(".clonematerial");
+    material.innerHTML += `<div class="title" id="demo">
+    <div><p>CO1</p><P style="color:grey">WHEEL-MATERIAL</P></div>
+    <div><p>2EA</p><p style="color:grey">5MO1</P></div>
+  </div>`;
+    document.menu.append(material);
+    document.body.append(menu);
+  };
+  function plus() {
+  let number = prompt("Please enter your number", "");
+  let material=prompt("Please enter your material","");
+  if (number!= null) {
+    document.getElementById("newlist").innerHTML +=number+" "+material;
+    document.getElementById("newlist").innerHTML +="</br>";
+    
+
+    
+  }
+}
+ 
+
+
+  
+
+
+  $(document).ready(function () {
+    $("#myInput").on("keyup", function () {
+      var value = $(this).val().toLowerCase();
+      $("#myUL li").filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+</script>
+
+</head>
+<body>
+
+<div class="row">
+  <div class="column left" style="background-color:WHITE;">
+    <h1 class="Bills" >Bill of Material</h1>
+    <div class="col-3">
+        <input class="Search" id="myInput" type="search" placeholder="Search Material" >
+    </div>
+    <div style="margin-top:10px;">
+                
+                <ul class="ulist" id="myUL" style="padding:0px;">
+                    <div class="listItem1 active"  style="padding:10px;">
+                    <li>
+                        <a href="file:///C:/Users/user/Desktop/first%20designui%20in%20pillir/swsa..html"> <button id="firstlink"><span>&#62;</span></button></a>
+                        <p>
+                        PRB1 <span><i class="float-end mt-3 fa-solid fa-angle-right forward" ></i> </span> <br>
+                        Red Sports Bike
+                        </p>
+                       
+                    </li>
+                    </div>
+                    <div class="listItem2" style="padding:10px;">
+                    <li> 
+                        <a href="file:///C:/Users/user/Desktop/first%20designui%20in%20pillir/prb2.html"> <button id="secondlink"><span>&#62;</span></button></a>
+                        <p>
+                        PRB2 <span><i class="float-end mt-3 fa-solid fa-angle-right forward" ></i> </span> <br> Blue Sports Bike  
+                        </p>
+                        
+                    </li>
+                    </div>
+                    <div class="listItem3" style="padding:10px;">
+                    <li >
+                        <a href="file:///C:/Users/user/Desktop/first%20designui%20in%20pillir/prb3.html"> <button id="thirdlink"><span>&#62;</span></button></a>
+                    <p> PRB3  <span><i class="float-end mt-3 fa-solid fa-angle-right forward" ></i> </span> <br>  Micro Suction tape </p>
+                  </li>
+                  
+                  <li>
+                    <div id="newlist"></div>
+                  </li>
+                    </div>
+                </ul>
+            </div>
+           <div class="icon">
+            <button   onclick="plus()"class="w3-button w3-xlarge w3-circle w3-orange w3-card-4">+</button>
+           </div>
+    
+  </div>
+  <div class="column right" style="background-color:white;">
+    
+    <h1 id="heading"><span><i class="fa-solid fa-sun"></i></span>Good Morning, Mr.Vaidy<span> <i style="float: right;" class="fa-regular fa-bell float-end"></i> </span></h1>
+
+    
+    
+    <div class="flex-container">
+        <div><p>PRB2</p><P>Red Sports Bike</P></div>
+        <div><p>1101-PHONEIX</p><P style="color:grey">JUL-01-2017 TO JUL-07-2017</P></div>
+        <div><P>PRODUCTION</P><P style="color:grey">QUANTITY-1EA UNUSED</P></div>
+      </div>
+      <div>
+        <button class="float-end plus" onclick="myFunction()"><i class="fa-solid fa-plus fa-1x" style="color: white;"></i></button>
+      </div>
+
+    <div class="title">
+      <div><p>CO1</p><P style="color:grey">WHEEL-MATERIAL</P></div>
+      <div><p>2EA</p><p style="color:grey">5MO1</P></div>
+    </div>
+    <div style="float: right;">
+              
+      <button class="add float-end" style="float: right;"> <i class="float-end fa-solid fa-plus"></i> </button>
+      <button class="remove float-end" style="float:right"> <i class="fa-solid fa-xmark"></i> </button>
+      
+      
+
+    </div>
+    <div class="clonematerial"></div>
+    <h3 id="material">Material :E1BY302520-G(Green Tyre Ultra VortiR)</h3>
+    <table class="w3-table-all">
+      <thead>
+        <tr class="w3-orange">
+          <th style="color:white">ITEM NO</th>
+          <th style="color:white" >ITEM CODE</th>
+          <th style="color:white">CATEGORY</th>
+          <th style="color:white">QUANTITY</th>
+          <th style="color:white">UNIT OF MEASURE</th>
+        </tr>
+      </thead>
+      <tr>
+        <td><b>0010</b></td>
+        <td><b>E1ME04-88-0500</b></td>
+        <td><b>L</b></td>
+        <td><b>2</b></td>
+        <td><b>EA</b></td>
+      </tr>
+      <tr>
+        <td><b>0020</b></td>
+        <td><b>ELPA90ZH400-546</b></td>
+        <td><b>L</b></td>
+        <td><b>10.535</b></td>
+        <td><b>M</b></td>
+      </tr>
+      
+    </table>
+    <div class="title2">
+      <div><p>OBA51</p><P style="color:grey">Bike QualityInspection-Operation</P></div>
+      <div><p>100MIN</p></div>
+    </div>
+    
+  </div>
+
+    
+    
+    
+    
+
+    
+  </div>
+</div>
+
+
+</body>
+</html>
